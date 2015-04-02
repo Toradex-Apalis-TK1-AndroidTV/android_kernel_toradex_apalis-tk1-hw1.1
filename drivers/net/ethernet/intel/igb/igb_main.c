@@ -2906,7 +2906,7 @@ static int igb_probe(struct pci_dev *pdev,
 
 	/* make sure the NVM is good */
 	if (e1000_validate_nvm_checksum(hw) < 0) {
-#if defined (CONFIG_MACH_APALIS_T30) || defined (CONFIG_MACH_APALIS_TK1)
+#ifdef CONFIG_MACH_ARDBEG
 		/* only warn on NVM validation failures */
 		dev_warn(pci_dev_to_dev(pdev),
 			"The NVM Checksum Is Not Valid\n");
@@ -2922,7 +2922,7 @@ static int igb_probe(struct pci_dev *pdev,
 	if (e1000_read_mac_addr(hw))
 		dev_err(pci_dev_to_dev(pdev), "NVM Read Error\n");
 
-#if defined (CONFIG_MACH_APALIS_T30) || defined (CONFIG_MACH_APALIS_TK1)
+#ifdef CONFIG_MACH_ARDBEG
 	if (g_usr_mac && (g_usr_mac < 3)) {
 		/* Get user set MAC address */
 		if (g_usr_mac == 2) {
@@ -2946,7 +2946,7 @@ static int igb_probe(struct pci_dev *pdev,
 #else
 	if (!is_valid_ether_addr(netdev->dev_addr)) {
 #endif
-#if defined (CONFIG_MACH_APALIS_T30) || defined (CONFIG_MACH_APALIS_TK1)
+#ifdef CONFIG_MACH_ARDBEG
 		/* Use Toradex OUI as default */
 		char default_mac_addr[ETH_ALEN] = {0x0, 0x14, 0x2d, 0x0, 0x0, 0x0};
 		dev_warn(&pdev->dev, "using Toradex OUI as default igb MAC");
@@ -3229,7 +3229,7 @@ err_register:
 #ifdef HAVE_I2C_SUPPORT
 	memset(&adapter->i2c_adap, 0, sizeof(adapter->i2c_adap));
 #endif /* HAVE_I2C_SUPPORT */
-#if !defined (CONFIG_MACH_APALIS_T30) && !defined (CONFIG_MACH_APALIS_TK1)
+#if !defined (CONFIG_MACH_ARDBEG)
 err_eeprom:
 #endif
 	if (!e1000_check_reset_block(hw))

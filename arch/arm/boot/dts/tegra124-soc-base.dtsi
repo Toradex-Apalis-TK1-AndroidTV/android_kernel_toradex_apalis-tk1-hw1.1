@@ -991,7 +991,7 @@
 			#size-cells = <2>;
 			ranges;
 
-			nvidia,num-lanes = <4>;
+			nvidia,num-lanes = <2>;
 		};
 
 		pci@2,0 {

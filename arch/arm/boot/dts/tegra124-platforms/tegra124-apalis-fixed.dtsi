@@ -49,6 +49,11 @@
 			regulator-name = "reg-3v3";
 			regulator-min-microvolt = <3300000>;
 			regulator-max-microvolt = <3300000>;
+			regulator-always-on;
+			regulator-boot-on;
+			/* PWR_EN_+V3.3 */
+			gpio = <&as3722 2 0>;
+			enable-active-high;
 
 			consumers {
 				c1 {

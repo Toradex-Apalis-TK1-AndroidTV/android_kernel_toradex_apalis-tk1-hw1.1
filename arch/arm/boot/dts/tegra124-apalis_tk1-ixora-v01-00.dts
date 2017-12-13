@@ -188,7 +188,7 @@
 		avddio-pex-supply = <&as3722_sd4>;
 		avdd-pex-pll-supply = <&as3722_sd4>;
 		vddio-pex-ctl-supply = <&as3722_sd4>;
-		nvidia,lane-map = <0x14>;
+		nvidia,lane-map = <0x12>;
 		status = "okay";
 
 		pci@1,0 {
@@ -217,6 +217,7 @@
 	xusb_pad_ctl: xusb_padctl {
 		nvidia,ss_portmap = <0x72>; /* SSP0 on USB2P2 */
 		nvidia,lane_owner = <6>; /* USB3P0 USB3P1 */
+		nvidia,lane-map = <0x12>;
 		nvidia,otg_portmap = <0x0>;
 		status = "okay";
 	};

@@ -469,24 +469,23 @@ static struct tegra_usb_platform_data tegra_udc_pdata = {
 	.phy_intf = TEGRA_USB_PHY_INTF_UTMI,
 	.op_mode = TEGRA_USB_OPMODE_DEVICE,
 	.u_data.dev = {
-		.vbus_pmu_irq = 0,
-		.charging_supported = true,
-		.remote_wakeup_supported = false,
+		.vbus_pmu_irq			= 0,
+		.charging_supported		= false,
+		.remote_wakeup_supported	= false,
 	},
 	.u_cfg.utmi = {
-		.hssync_start_delay = 0,
-		.elastic_limit = 16,
-		.idle_wait_delay = 17,
-		.term_range_adj = 6,
-		.xcvr_setup = 8,
-		.xcvr_lsfslew = 2,
-		.xcvr_lsrslew = 2,
-		.xcvr_setup_offset = 0,
-		.xcvr_use_fuses = 1,
+		.hssync_start_delay	= 0,
+		.elastic_limit		= 16,
+		.idle_wait_delay	= 17,
+		.term_range_adj		= 6,
+		.xcvr_setup		= 8,
+		.xcvr_lsfslew		= 2,
+		.xcvr_lsrslew		= 2,
+		.xcvr_setup_offset	= 0,
+		.xcvr_use_fuses		= 1,
 	},
 };
 
-#if !defined(CONFIG_ARM64)
 static struct tegra_usb_platform_data tegra_ehci1_utmi_pdata = {
 	.port_otg = true,
 	.has_hostpc = true,
@@ -494,22 +493,22 @@ static struct tegra_usb_platform_data tegra_ehci1_utmi_pdata = {
 	.phy_intf = TEGRA_USB_PHY_INTF_UTMI,
 	.op_mode = TEGRA_USB_OPMODE_HOST,
 	.u_data.host = {
-		.hot_plug = false,
-		.remote_wakeup_supported = true,
-		.power_off_on_suspend = true,
+		.hot_plug			= false,
+		.remote_wakeup_supported	= true,
+		.power_off_on_suspend		= true,
 	},
 	.u_cfg.utmi = {
-		.hssync_start_delay = 0,
-		.elastic_limit = 16,
-		.idle_wait_delay = 17,
-		.term_range_adj = 6,
-		.xcvr_setup = 15,
-		.xcvr_lsfslew = 0,
-		.xcvr_lsrslew = 3,
-		.xcvr_setup_offset = 0,
-		.xcvr_use_fuses = 1,
-		.vbus_oc_map = 0x4,
-		.xcvr_hsslew_lsb = 2,
+		.hssync_start_delay	= 0,
+		.elastic_limit		= 16,
+		.idle_wait_delay	= 17,
+		.term_range_adj		= 6,
+		.xcvr_setup		= 15,
+		.xcvr_lsfslew		= 0,
+		.xcvr_lsrslew		= 3,
+		.xcvr_setup_offset	= 0,
+		.xcvr_use_fuses		= 1,
+		.vbus_oc_map		= 0x4,
+		.xcvr_hsslew_lsb	= 2,
 	},
 };
 
@@ -520,21 +519,21 @@ static struct tegra_usb_platform_data tegra_ehci2_utmi_pdata = {
 	.phy_intf = TEGRA_USB_PHY_INTF_UTMI,
 	.op_mode = TEGRA_USB_OPMODE_HOST,
 	.u_data.host = {
-		.hot_plug = false,
-		.remote_wakeup_supported = true,
-		.power_off_on_suspend = true,
+		.hot_plug			= false,
+		.remote_wakeup_supported	= true,
+		.power_off_on_suspend		= true,
 	},
 	.u_cfg.utmi = {
-		.hssync_start_delay = 0,
-		.elastic_limit = 16,
-		.idle_wait_delay = 17,
-		.term_range_adj = 6,
-		.xcvr_setup = 8,
-		.xcvr_lsfslew = 2,
-		.xcvr_lsrslew = 2,
-		.xcvr_setup_offset = 0,
-		.xcvr_use_fuses = 1,
-		.vbus_oc_map = 0x5,
+		.hssync_start_delay	= 0,
+		.elastic_limit		= 16,
+		.idle_wait_delay	= 17,
+		.term_range_adj		= 6,
+		.xcvr_setup		= 8,
+		.xcvr_lsfslew		= 2,
+		.xcvr_lsrslew		= 2,
+		.xcvr_setup_offset	= 0,
+		.xcvr_use_fuses		= 1,
+		.vbus_oc_map		= 0x5,
 	},
 };
 
@@ -545,21 +544,21 @@ static struct tegra_usb_platform_data tegra_ehci3_utmi_pdata = {
 	.phy_intf = TEGRA_USB_PHY_INTF_UTMI,
 	.op_mode = TEGRA_USB_OPMODE_HOST,
 	.u_data.host = {
-		.hot_plug = false,
-		.remote_wakeup_supported = true,
-		.power_off_on_suspend = true,
+		.hot_plug			= false,
+		.remote_wakeup_supported	= true,
+		.power_off_on_suspend		= true,
 	},
 	.u_cfg.utmi = {
-	.hssync_start_delay = 0,
-		.elastic_limit = 16,
-		.idle_wait_delay = 17,
-		.term_range_adj = 6,
-		.xcvr_setup = 8,
-		.xcvr_lsfslew = 2,
-		.xcvr_lsrslew = 2,
-		.xcvr_setup_offset = 0,
-		.xcvr_use_fuses = 1,
-		.vbus_oc_map = 0x5,
+	.hssync_start_delay		= 0,
+		.elastic_limit		= 16,
+		.idle_wait_delay	= 17,
+		.term_range_adj		= 6,
+		.xcvr_setup		= 8,
+		.xcvr_lsfslew		= 2,
+		.xcvr_lsrslew		= 2,
+		.xcvr_setup_offset	= 0,
+		.xcvr_use_fuses		= 1,
+		.vbus_oc_map		= 0x5,
 	},
 };
 
@@ -581,9 +580,7 @@ static struct tegra_usb_otg_data tegra_otg_pdata = {
 	.ehci_pdata = &tegra_ehci1_utmi_pdata,
 };
 
-#else
 static struct tegra_usb_otg_data tegra_otg_pdata;
-#endif
 
 static void ardbeg_usb_init(void)
 {
@@ -670,9 +667,14 @@ static void ardbeg_usb_init(void)
 							true;
 	}
 
-	if (!(usb_port_owner_info & UTMI1_PORT_OWNER_XUSB)) {
-		tegra_otg_pdata.is_xhci = false;
-		tegra_udc_pdata.u_data.dev.is_xhci = false;
+	if (!(usb_port_owner_info & UTMI2_PORT_OWNER_XUSB)) {
+		tegra_ehci2_device.dev.platform_data = &tegra_ehci2_utmi_pdata;
+		platform_device_register(&tegra_ehci2_device);
+	}
+
+	if (!(usb_port_owner_info & UTMI2_PORT_OWNER_XUSB)) {
+		tegra_ehci3_device.dev.platform_data = &tegra_ehci3_utmi_pdata;
+		platform_device_register(&tegra_ehci3_device);
 	} else {
 		tegra_otg_pdata.is_xhci = true;
 		tegra_udc_pdata.u_data.dev.is_xhci = true;

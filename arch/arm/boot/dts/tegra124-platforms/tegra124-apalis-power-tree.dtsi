@@ -60,7 +60,7 @@
 		pwrdet-bb-supply = <&as3722_sd5>;
 		pwrdet-mipi-supply = <&as3722_ldo2>;
 		pwrdet-sdmmc3-supply = <&as3722_ldo6>;
-		pwrdet-hv-supply = <&reg_3v3>;
+		pwrdet-hv-supply = <&as3722_gpio2_supply>;
 	};
 
 	udc@7d000000 {
@@ -76,7 +76,7 @@
 		usb_vbus0-supply = <&usb0_vbus>;
 		usb_vbus1-supply = <&usb1_usb2_vbus>;
 		usb_vbus2-supply = <&usb1_usb2_vbus>;
-		hvdd_usb-supply = <&reg_3v3>;
+		hvdd_usb-supply = <&as3722_gpio2_supply>;
 		avdd_pll_erefe-supply = <&as3722_ldo0>;
 		avdd_pll_utmip-supply = <&as3722_sd5>;
 		vddio_hsic-supply = <&as3722_ldo2>;
